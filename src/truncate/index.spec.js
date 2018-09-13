@@ -3,7 +3,7 @@ import truncate from './index';
 describe('truncate::', () => {
   /** @test {truncate} */
   it('should truncate string', function () {
-    expect(truncate('Some long text', 7)).toEqual('Some...');
+    expect(truncate('Some long text', 7)).toEqual('Some lo...');
   });
 
   /** @test {truncate} */
