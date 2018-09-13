@@ -10,22 +10,24 @@
  */
 
 const twoSums = (arr, base) => {
-    var sums = [];
-    // check each element in array
-    for (let i = 0; i < arr.length; i++) {
-        // check each other element in the array
-        for (let j = i + 1; j < arr.length; j++) {
-            // determine if these two elements sum to base
-            if (arr[i] + arr[j] === base) {
-                sums.push([arr[i], arr[j]]);
-            }
+    const map = [];
+    const indexnum = [];
+    let result;
+
+    for (let x = 0; x < arr.length; x++) {
+        if (map[arr[x]] != null) {
+            let index = map[arr[x]];
+                indexnum[0] = index+1;
+                indexnum[1] = x+1;
+            break;
+        } else {
+            map[base - arr[x]] = x;
         }
     }
-    // return all pairs of integers that sum to base
-
-    console.log(sums); //console result is ok, test is failed
-
-    return sums;
+    result =  indexnum.map(function(idx) {
+        return arr[idx-1];
+    });
+    return result;
 };
 
 export default twoSums;
