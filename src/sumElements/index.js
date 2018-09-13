@@ -11,7 +11,16 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  /* your logic here...*/
+    if(!Array.isArray(arr)) return;
+    let totalNumber = 0,
+        i = -1;
+    while (++i < arr.length) {
+        let n = Math.trunc(arr[i]);
+        if(Number.isInteger(n)) {
+            totalNumber += n;
+        }
+    }
+    return totalNumber;
 };
 
 export default sumElements;
