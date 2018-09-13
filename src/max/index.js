@@ -7,7 +7,20 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+
+    // if(arr.includes(NaN)) {
+    //     throw new Error('Has NaN');
+    // } else if(arr.includes(Infinity)) {
+    //     throw new Error('Has Infinity');
+    // } else if(arr.includes(-Infinity)) {
+    //     throw new Error('Has Infinity');
+    // }
+
+    return Math.max.apply(Math, arr.filter(function(val) {
+        return Number.isFinite(val)
+    }));
+
+    // return Math.max(...arr);
 };
 
 export default max;

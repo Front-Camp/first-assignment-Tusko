@@ -7,6 +7,7 @@
  * isObject([]);   // false
  * isObject(null); // false
  */
+
 const isObject = data => {
     if(data == null) return false;
     return data.constructor.name.toLowerCase() === "object";
