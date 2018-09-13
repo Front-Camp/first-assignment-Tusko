@@ -9,8 +9,13 @@
 * sum(0, 5);   // 5
 * sum(-1, 13); // 12
 */
+
 const sum = (a, b) => {
-  /* your logic here...*/
+    if( Number.isFinite(a) && Number.isFinite(b) ) {
+        return (+a) + (+b);
+    } else {
+        throw new Error('Number error ^_^');
+    }
 };
 
 export default sum;
