@@ -8,7 +8,8 @@
  * isObject(null); // false
  */
 const isObject = data => {
-  /* your logic here...*/
+    if(data == null) return false;
+    return data.constructor.name.toLowerCase() === "object";
 };
 
 export default isObject;
