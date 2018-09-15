@@ -10,14 +10,20 @@
  * sumElements(['1', 'hi', 3]);     // 4
  * sumElements([Infinity, NaN, 1]); // 1
  */
+
 const sumElements = arr => {
     if(!Array.isArray(arr)) return;
     let totalNumber = 0,
         i = -1;
     while (++i < arr.length) {
-        let n = Math.trunc(arr[i]);
-        if(Number.isInteger(n)) {
-            totalNumber += n;
+        let s2n = (parseFloat(arr[i]) || parseInt(arr[i])),
+            s2n2 = Math.trunc(arr[i]);
+        if(s2n !== Infinity) {
+            if(typeof s2n === 'number' && !isNaN(s2n)) {
+                totalNumber += s2n;
+            } else if(Number.isInteger(s2n2)) {
+                totalNumber += s2n2;
+            }
         }
     }
     return totalNumber;
