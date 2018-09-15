@@ -7,9 +7,10 @@
  */
 
 const getFlags = arr => {
-    return arr.reduce((a, b) => {
-        return b.flags;
+    let result = arr.reduce((a, b) => {
+        return a.concat(b.flags);
     }, []);
+    return result;
 };
 
 export default getFlags;
